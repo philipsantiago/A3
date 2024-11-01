@@ -57,6 +57,10 @@ export const getMyTopTracks = async (token) => {
 /* Fetches the given album from the Spotify API.
  * Make sure that ALBUM_TRACK_API_GETTER is set correctly in env.js */
 export const getAlbumTracks = async (albumId, token) => {
+  console.log("ALBUM ID:");
+  console.log(albumId);
+  console.log("TOKEN IN ALBUM TRACKS");
+  console.log(token);
   try {
     const res = await fetcher(ALBUM_TRACK_API_GETTER(albumId), token);
     const transformedResponse = res.data?.tracks?.items?.map((item) => {
